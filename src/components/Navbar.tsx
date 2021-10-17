@@ -13,7 +13,7 @@ const Navbar = () => {
             // variant="button"
             underline="none"
             color="inherit"
-            href="#"
+            href="/tour"
             sx={{ my: 1, mx: 1.5 }}
           >
             Tour
