@@ -19,14 +19,15 @@ const CarouselHome = () => {
         items.map((item, i) => {
           return (
             <div key={i}>
-              <Paper>
+              {/* <Paper>
                 <h2>{item.name}</h2>
                 <p>{item.description}</p>
 
                 <Button className="CheckButton">
                   Check it out!
                 </Button>
-              </Paper>
+              </Paper> */}
+              <img alt={"manuk"} src={"https://images.unsplash.com/photo-1480044965905-02098d419e96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"} />
             </div>
           );
         })
