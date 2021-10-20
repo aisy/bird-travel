@@ -1,9 +1,12 @@
 import { Container, Grid, Paper, Box, IconButton, InputBase, Card } from "@mui/material";
-import CardTour from "../components/CardTour";
 import DefaultLayout from "../layout/DefaultLayout";
 import SearchIcon from "@mui/icons-material/Search";
+import ListCardTour from "../components/ListCardTour";
+
+import { getListTour } from '../services/servicesTour';
 
 const TourPage = () => {
+
   return (
     <DefaultLayout>
       <Container>
@@ -29,32 +32,9 @@ const TourPage = () => {
               </Card>
             </Grid>
             <Grid item xs={9}>
-              <Grid container spacing={2}>
-                <Grid item xs={4}>
-                  <CardTour
-                    title={"Malang"}
-                    onClick={() => { console.log("Meow") }}
-                  />
-                </Grid>
-                <Grid item xs={4}>
-                  <CardTour
-                    title={"Coba 2"}
-                  />
-                </Grid>
-                <Grid item xs={4}>
-                  <CardTour
-                    title={"Coba 3"}
-                  />
-                </Grid>
-                <Grid item xs={4}>
-                  <CardTour
-                    title={"Coba 4"}
-                  />
-                </Grid>
-                {/* <Grid item xs={4}>
-                  <CardTour/>
-                </Grid> */}
-              </Grid>
+              <ListCardTour
+                data={getListTour()}
+              />
             </Grid>
           </Grid>
           <Box sx={{ marginBottom: 2 }} />
