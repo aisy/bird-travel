@@ -10,9 +10,6 @@ const TourPage = () => {
         <div style={{ marginTop: 20 }}>
           <Grid container spacing={2}>
             <Grid item xs={3}>
-              <Paper sx={{ backgroundColor: 'red' }}>
-
-              </Paper>
               <Card sx={{ padding: 2 }}>
                 <Box sx={{ alignItems: 'center', justifyContent: 'center', display: 'flex', marginBottom: 5 }}>
                   <Paper
@@ -34,17 +31,29 @@ const TourPage = () => {
             <Grid item xs={9}>
               <Grid container spacing={2}>
                 <Grid item xs={4}>
-                  <CardTour />
+                  <CardTour
+                    title={"Malang"}
+                    onClick={() => { console.log("Meow") }}
+                  />
                 </Grid>
                 <Grid item xs={4}>
-                  <CardTour />
+                  <CardTour
+                    title={"Coba 2"}
+                  />
                 </Grid>
                 <Grid item xs={4}>
-                  <CardTour />
+                  <CardTour
+                    title={"Coba 3"}
+                  />
                 </Grid>
                 <Grid item xs={4}>
-                  <CardTour />
+                  <CardTour
+                    title={"Coba 4"}
+                  />
                 </Grid>
+                {/* <Grid item xs={4}>
+                  <CardTour/>
+                </Grid> */}
               </Grid>
             </Grid>
           </Grid>
