@@ -1,19 +1,32 @@
-import { FunctionComponent } from 'react';
-import { Card, CardHeader, CardMedia, CardContent, CardActionArea, Typography, Avatar } from '@mui/material';
-import { blue } from '@mui/material/colors';
+import { Card, CardMedia, CardContent, CardActionArea, Typography } from '@mui/material';
+import { useHistory } from 'react-router-dom';
 
 interface CardTourProp {
   title?: string,
   image?: string,
   content?: string,
-  onClick?: () => void
 }
 
-const CardTour = ({ title, image, content, onClick }: CardTourProp) => {
+const CardTour = ({ title, image, content }: CardTourProp) => {
+
+  const history = useHistory();
+
+  const routeChange = (path: string) => {
+    history.push({
+      pathname: path,
+      state: {
+        title: title,
+      }
+    });
+  }
 
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea onClick={onClick ? onClick : () => { console.log("Destroy") }}>
+      <CardActionArea
+        onClick={
+          () => routeChange(`tour/${title}`)
+        }
+      >
         <CardMedia
           component={"img"}
           height={190}
@@ -34,7 +47,7 @@ const CardTour = ({ title, image, content, onClick }: CardTourProp) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-    </Card>
+    </Card >
   );
 }
 
