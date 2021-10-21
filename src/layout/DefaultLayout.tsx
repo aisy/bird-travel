@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { Box } from '@mui/material';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { InitTopPosition, ScrollTopButton } from '../components/ScrollTop';
 
 interface Props {
@@ -19,6 +20,7 @@ const DefaultLayout = (props: Props) => {
           {children}
         </div>
         <ScrollTopButton {...props} />
+        <Footer />
       </Box>
     </div>
   );
