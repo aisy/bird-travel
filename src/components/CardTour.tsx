@@ -16,6 +16,7 @@ const CardTour = ({ title, image, content }: CardTourProp) => {
       pathname: path,
       state: {
         title: title,
+        image: image,
       }
     });
   }
