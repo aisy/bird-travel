@@ -31,6 +31,52 @@ function getListTour() {
   return dummyData;
 }
 
+function getListDayTour() {
+  let dummyData = [
+    {
+      label: "Hari pertama",
+      description: "Ullamco ea aute sint Lorem adipisicing nulla dolor do eiusmod commodo ipsum pariatur nostrud ad. Duis sint sint nulla minim aute esse quis ex dolor laborum."
+    },
+    {
+      label: "Hari kedua",
+      description: "Ullamco ea aute sint Lorem adipisicing nulla dolor do eiusmod commodo ipsum pariatur nostrud ad. Duis sint sint nulla minim aute esse quis ex dolor laborum."
+    },
+    {
+      label: "Hari ketiga",
+      description: "Ullamco ea aute sint Lorem adipisicing nulla dolor do eiusmod commodo ipsum pariatur nostrud ad. Duis sint sint nulla minim aute esse quis ex dolor laborum."
+    },
+    {
+      label: "Hari keempat",
+      description: "Ullamco ea aute sint Lorem adipisicing nulla dolor do eiusmod commodo ipsum pariatur nostrud ad. Duis sint sint nulla minim aute esse quis ex dolor laborum."
+    },
+    {
+      label: "Hari kelima",
+      description: "Ullamco ea aute sint Lorem adipisicing nulla dolor do eiusmod commodo ipsum pariatur nostrud ad. Duis sint sint nulla minim aute esse quis ex dolor laborum."
+    },
+    {
+      label: "Hari keenam",
+      description: "Ullamco ea aute sint Lorem adipisicing nulla dolor do eiusmod commodo ipsum pariatur nostrud ad. Duis sint sint nulla minim aute esse quis ex dolor laborum."
+    },
+    {
+      label: "Hari ketujuh",
+      description: "Ullamco ea aute sint Lorem adipisicing nulla dolor do eiusmod commodo ipsum pariatur nostrud ad. Duis sint sint nulla minim aute esse quis ex dolor laborum."
+    }
+  ];
+
+  // const getData = async () => {
+  //   try {
+  //     const response = await fetch('');
+  //     const getResponse = await response.json();
+  //     return getResponse;
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
+
+  return dummyData;
+}
+
 export {
-  getListTour
+  getListTour,
+  getListDayTour,
 }
