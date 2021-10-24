@@ -1,8 +1,7 @@
 import { useState, SyntheticEvent } from 'react';
-import { Paper, Typography, Tab, Tabs, Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import { Paper, Typography, Tab, Tabs, Stepper, Step, StepLabel, StepContent } from "@mui/material";
 import { Box } from "@mui/system";
 import { blue } from "@mui/material/colors";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import TabPanel from "./TabPanel";
 
 interface DetailTourProps {
@@ -20,6 +19,7 @@ const DetailTourTab = ({ activityTour }: DetailTourProps) => {
   }
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
+    event.preventDefault();
     setValue(newValue);
   };
 
@@ -33,25 +33,20 @@ const DetailTourTab = ({ activityTour }: DetailTourProps) => {
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-          {activityTour?.map((item: any, key: any) => {
-            return (
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
-                  sx={{ backgroundColor: blue[500] }}
-                >
-                  <Typography sx={{ color: 'white' }}>
-                    {`Hari ke - ${key + 1}`}
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    {item.description}
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-            );
-          })}
+          <Stepper orientation="vertical" activeStep={-1}>
+            {activityTour?.map((item: any, key: any) => {
+              return (
+                <Step key={key} active={true} >
+                  <StepLabel>{`Hari ke - ${key + 1}`}</StepLabel>
+                  <StepContent>
+                    <Typography>
+                      {item.description}
+                    </Typography>
+                  </StepContent>
+                </Step>
+              );
+            })}
+          </Stepper>
         </TabPanel>
         <TabPanel value={value} index={1}>
           Item Two
