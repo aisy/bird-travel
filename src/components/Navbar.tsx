@@ -1,60 +1,55 @@
-import { AppBar, Toolbar, Typography, Link } from '@mui/material';
-// import MenuIcon from '@mui/icons-material/Menu';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [changeNavbarColor, setChangeNavbarColor] = useState(false);
+
+  const changeBackgroundColor = () => {
+    if (window.scrollY >= 180) {
+      setChangeNavbarColor(true);
+    } else {
+      setChangeNavbarColor(false);
+    }
+  }
+
+  useEffect(() => {
+    return () => {
+      changeBackgroundColor();
+      window.addEventListener("scroll", changeBackgroundColor)
+    };
+  });
+
   return (
-    <AppBar position="fixed" sx={{ paddingLeft: 30, paddingRight: 30 }}>
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <Link
-            underline={"none"}
-            color={"inherit"}
-            href={'/'}
-          >
-            Kunam Tours
-          </Link>
-        </Typography>
-        <nav>
-          <Link
-            // variant="button"
-            underline="none"
-            color="inherit"
-            href="/tour"
-            sx={{ my: 1, mx: 1.5 }}
-          >
+    <div className={`navbar mb-2 fixed w-full text-black z-50 ${changeNavbarColor ? 'shadow-lg bg-white' : 'bg-transparent'} `}>
+      <div className={"flex-1 px-2 mx-2"}>
+        <span className={"text-lg font-bold"}>
+          Manuk
+        </span>
+      </div>
+      <div className="flex-none hidden px-2 mx-2 lg:flex">
+        <div className="flex items-stretch">
+          <Link to={"/"} className="btn btn-ghost btn-sm rounded-btn">
             Tour
           </Link>
-          <Link
-            // variant="button"
-            underline="none"
-            color="inherit"
-            href="#"
-            sx={{ my: 1, mx: 1.5 }}
-          >
-            Report
+          <Link to={"/"} className="btn btn-ghost btn-sm rounded-btn">
+            Pemandu
           </Link>
-          <Link
-            // variant="button"
-            underline="none"
-            color="inherit"
-            href="#"
-            sx={{ my: 1, mx: 1.5 }}
-          >
-            Booking
+          <Link to={"/"} className="btn btn-ghost btn-sm rounded-btn">
+            Galeri
           </Link>
-          <Link
-            // variant="button"
-            underline="none"
-            color="inherit"
-            href="#"
-            sx={{ my: 1, mx: 1.5 }}
-          >
-            Kontak Kami
+          <Link to={"/"} className="btn btn-ghost btn-sm rounded-btn">
+            Kontak
           </Link>
-        </nav>
-
-      </Toolbar>
-    </AppBar>
+        </div>
+      </div>
+      <div className="lg:hidden sm:flex-none">
+        <button className="btn btn-square btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
   );
 }
 

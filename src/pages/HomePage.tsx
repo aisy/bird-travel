@@ -1,19 +1,35 @@
-import CarouselHome from '../components/CarouselHome';
 import DefaultLayout from '../layout/DefaultLayout';
 
 const HomePage = () => {
   return (
     <>
       <DefaultLayout>
-        <CarouselHome />
-        <div style={{ marginInline: 60 }}>
-          {[...new Array(50)].map(() =>
-            `Cras mattis consectetur purus sit amet fermentum.
-            Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-            Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            `,
-          ).join('\n')}
+        <div className={"hero min-h-screen bg-base-200"}>
+          <div className={"text-center hero-content"}>
+            <div className="max-w-md">
+              <h1 className="mb-5 text-5xl font-bold">
+                Hello there
+              </h1>
+              <p className="mb-5">
+                Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
+              </p>
+              <button className="btn btn-primary">Get Started</button>
+            </div>
+          </div>
+        </div>
+
+        <div className="hero min-h-screen bg-base-200">
+          <div className="flex-col hero-content lg:flex-row-reverse">
+            <img src="https://picsum.photos/id/1005/600/600" className="max-w-sm rounded-lg shadow-2xl" />
+            <div>
+              <h1 className="mb-5 text-5xl font-bold">
+                About Us
+              </h1>
+              <p className="mb-5">
+                We're Birdpacker enthusiastic Indonesian birdwatcher. Explore best bird watching locations to see and photograph the endemic and beautiful birds. Organized and customized birding tours to suit your needs throughout the country.
+              </p>
+            </div>
+          </div>
         </div>
       </DefaultLayout>
     </>
