@@ -1,45 +1,48 @@
-import { Container, Grid, Paper, Box, IconButton, InputBase, Card } from "@mui/material";
 import DefaultLayout from "../layout/DefaultLayout";
-import SearchIcon from "@mui/icons-material/Search";
-import ListCardTour from "../components/ListCardTour";
 
 import { getListTour } from '../services/servicesTour';
 
 const TourPage = () => {
+  const listTour = getListTour();
 
   return (
     <DefaultLayout>
-      <Container>
-        <div style={{ marginTop: 20 }}>
-          <Grid container spacing={2}>
-            <Grid item xs={3}>
-              <Card sx={{ padding: 2 }}>
-                <Box sx={{ alignItems: 'center', justifyContent: 'center', display: 'flex', marginBottom: 5 }}>
-                  <Paper
-                    component={"form"}
-                    sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
-                  >
-                    <IconButton>
-                      <SearchIcon />
-                    </IconButton>
-                    <InputBase
-                      sx={{ ml: 1, flex: 1 }}
-                      placeholder="Lakukan Pencarian..."
-                      inputProps={{ 'aria-label': 'search google maps' }}
-                    />
-                  </Paper>
-                </Box>
-              </Card>
-            </Grid>
-            <Grid item xs={9}>
-              <ListCardTour
-                data={getListTour()}
-              />
-            </Grid>
-          </Grid>
-          <Box sx={{ marginBottom: 2 }} />
+      <div className={"px-32 my-28"}>
+        <div className={"grid grid-cols-3 gap-4"}>
+          <div className={"menu p-2 shadow-lg bg-base-100 text-base-content text-opacity-40 rounded-box"}>
+            <div className={"card-body"}>
+              asdasdasd
+            </div>
+          </div>
+          <div className={"card col-span-2"}>
+            <div className={"grid grid-cols-3 gap-2"}>
+              {
+                listTour.map(items => {
+                  return (
+                    <div className="card shadow-md">
+                      <figure><img src="https://picsum.photos/id/1005/400/250" /></figure>
+                      <div className="card-body">
+                        <h2 className="card-title">
+                          Top image
+                          <div className="badge mx-2 badge-secondary">NEW</div>
+                        </h2>
+                        <p>
+                          Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente.
+                        </p>
+                        <div className="justify-end card-actions">
+                          <button className="btn btn-secondary">
+                            More info
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })
+              }
+            </div>
+          </div>
         </div>
-      </Container>
+      </div>
     </DefaultLayout >
   );
 }

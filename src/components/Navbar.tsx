@@ -19,7 +19,7 @@ const Navbar = () => {
   });
 
   return (
-    <div className={`navbar mb-2 fixed w-full text-black z-50 ${changeNavbarColor ? 'shadow-lg bg-white' : 'bg-transparent '}`}>
+    <div className={`navbar top-0 mb-2 fixed w-full text-black z-50 ${changeNavbarColor ? 'shadow-lg bg-white' : 'bg-transparent '}`}>
       <div className={"flex-1 px-2 mx-2"}>
         <span className={"text-lg font-bold"}>
           Manuk
@@ -27,7 +27,7 @@ const Navbar = () => {
       </div>
       <div className="flex-none hidden px-2 mx-2 lg:flex">
         <div className="flex items-stretch">
-          <Link to={"/"} className="btn btn-ghost btn-sm rounded-btn">
+          <Link to={"/tour"} className="btn btn-ghost btn-sm rounded-btn">
             Tour
           </Link>
           <Link to={"/"} className="btn btn-ghost btn-sm rounded-btn">

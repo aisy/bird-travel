@@ -1,6 +1,6 @@
 const AboutUsSection = () => {
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-green-100">
       <div className="flex-col hero-content lg:flex-row-reverse">
         {/* <img src={"https://picsum.photos/id/1005/600/600"} alt={"custom image"} /> */}
         <img className={"max-w-2xl"} src={require('../../assets/img/undraw_dreamer_gxxi.svg').default} />

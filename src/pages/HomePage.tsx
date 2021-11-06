@@ -1,33 +1,68 @@
+import AboutUsSection from '../components/sections/AboutUsSection';
+import IntroSection from '../components/sections/IntroSection';
+import TourSection from '../components/sections/TourSection';
 import DefaultLayout from '../layout/DefaultLayout';
 
 const HomePage = () => {
   return (
     <>
       <DefaultLayout>
-        <div className={"hero min-h-screen bg-base-200"}>
-          <div className={"text-center hero-content"}>
-            <div className="max-w-md">
-              <h1 className="mb-5 text-5xl font-bold">
-                Hello there
-              </h1>
-              <p className="mb-5">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
-              </p>
-              <button className="btn btn-primary">Get Started</button>
-            </div>
-          </div>
-        </div>
+        <IntroSection />
+        <AboutUsSection />
+        <TourSection />
 
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-white">
           <div className="flex-col hero-content lg:flex-row-reverse">
-            <img src="https://picsum.photos/id/1005/600/600" className="max-w-sm rounded-lg shadow-2xl" />
+            <div className={'grid grid-cols-3 gap-2'}>
+              <div className="card shadow-lg bg-white">
+                <figure>
+                  <img src="https://picsum.photos/id/1005/60/40" className="w-full" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Small image file</h2>
+                  <p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente.</p>
+                  <div className="card-actions">
+                    <div className="badge badge-ghost">Article</div>
+                    <div className="badge badge-ghost">Photography</div>
+                  </div>
+                </div>
+              </div>
+              <div className="card shadow-lg bg-white">
+                <figure>
+                  <img src="https://picsum.photos/id/1005/60/40" className="w-full" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Small image file</h2>
+                  <p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente.</p>
+                  <div className="card-actions">
+                    <div className="badge badge-ghost">Article</div>
+                    <div className="badge badge-ghost">Photography</div>
+                  </div>
+                </div>
+              </div>
+              <div className="card shadow-lg bg-white">
+                <figure>
+                  <img src="https://picsum.photos/id/1005/60/40" className="w-full" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Small image file</h2>
+                  <p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente.</p>
+                  <div className="card-actions">
+                    <div className="badge badge-ghost">Article</div>
+                    <div className="badge badge-ghost">Photography</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div>
               <h1 className="mb-5 text-5xl font-bold">
-                About Us
+                Burung Nusantara
               </h1>
               <p className="mb-5">
-                We're Birdpacker enthusiastic Indonesian birdwatcher. Explore best bird watching locations to see and photograph the endemic and beautiful birds. Organized and customized birding tours to suit your needs throughout the country.
+                Di seluruh nusantara terdapat puluhan ribu lokasi habitat burung-burung yang tersebar. Ingin melihat dan merasakan bagaimana habitat burung favorit kalian? kami menawarkan tour di seluruh wilayah Indonesia!
               </p>
+              <button className="btn btn-primary">Get Started</button>
             </div>
           </div>
         </div>
